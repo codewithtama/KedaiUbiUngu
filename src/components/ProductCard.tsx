@@ -9,7 +9,7 @@ interface Product {
   price: number;
   image: string;
   category: string;
-  badge?: string;
+  badge?: string | null;
 }
 
 export default function ProductCard({ product }: { product: Product }) {
