@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div className="footer-column-brand">
           <div className="footer-brand">
-            Purple<span>Bite</span>
+            Kedai <span>Ubi Ungu</span>
           </div>
           <p className="footer-desc">
             Menyajikan cara baru menikmati ubi ungu dengan gaya modern, lezat, sehat, dan berkualitas premium.
@@ -115,7 +115,7 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; 2026 PurpleBite. Hak Cipta Dilindungi. Proyek Kuliah & UKM.</p>
+          <p>&copy; 2026 Kedai Ubi Ungu. Hak Cipta Dilindungi. Proyek Kuliah & UKM.</p>
         </div>
       </div>
     </footer>

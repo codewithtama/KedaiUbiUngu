@@ -5,14 +5,14 @@ export default function AboutPage() {
         {/* Story Column */}
         <div className="about-story animate-fade-in">
           <h1 className="section-title" style={{ marginBottom: '0.5rem' }}>
-            Tentang PurpleBite
+            Tentang Kedai Ubi Ungu
           </h1>
           <h3 style={{ fontWeight: 500, marginBottom: '2rem' }}>
             &quot;Menghadirkan Cita Rasa Nusantara dalam Kemasan Modern&quot;
           </h3>
 
           <p>
-            PurpleBite lahir dari ide sederhana di bangku kuliah: bagaimana membuat bahan pangan lokal yang kaya manfaat, seperti ubi ungu, menjadi sajian kekinian yang digemari oleh anak muda dan keluarga modern.
+            Kedai Ubi Ungu lahir dari ide sederhana di bangku kuliah: bagaimana membuat bahan pangan lokal yang kaya manfaat, seperti ubi ungu, menjadi sajian kekinian yang digemari oleh anak muda dan keluarga modern.
           </p>
 
           <p>
@@ -20,7 +20,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            Kami bangga bermitra langsung dengan para petani ubi ungu lokal di Jawa Barat untuk memastikan pasokan bahan baku yang segar dan berkualitas tinggi. Setiap pembelian produk PurpleBite turut membantu meningkatkan kesejahteraan rantai pasok pertanian lokal.
+            Kami bangga bermitra langsung dengan para petani ubi ungu lokal di Jawa Barat untuk memastikan pasokan bahan baku yang segar dan berkualitas tinggi. Setiap pembelian produk Kedai Ubi Ungu turut membantu meningkatkan kesejahteraan rantai pasok pertanian lokal.
           </p>
 
           {/* Vision & Mission Grid */}

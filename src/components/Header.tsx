@@ -23,7 +23,7 @@ export default function Header() {
     <header>
       <div className="container navbar">
         <Link href="/" className="brand">
-          Purple<span>Bite</span>
+          Kedai <span>Ubi Ungu</span>
         </Link>
         <nav aria-label="Main Navigation">
           <ul className="nav-menu">

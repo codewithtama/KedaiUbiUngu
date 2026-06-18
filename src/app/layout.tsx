@@ -6,8 +6,8 @@ import CartDrawer from '@/components/CartDrawer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 export const metadata: Metadata = {
-  title: 'PurpleBite - Lezat dan Sehat dari Ubi Ungu',
-  description: 'PurpleBite menyajikan aneka olahan ubi ungu premium yang lezat dan menyehatkan. Cocok untuk cemilan keluarga, acara spesial, dan hadiah manis.',
+  title: 'Kedai Ubi Ungu - Lezat dan Sehat dari Ubi Ungu',
+  description: 'Kedai Ubi Ungu menyajikan aneka olahan ubi ungu premium yang lezat dan menyehatkan. Cocok untuk cemilan keluarga, acara spesial, dan hadiah manis.',
 };
 
 export const viewport: Viewport = {
