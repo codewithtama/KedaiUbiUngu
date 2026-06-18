@@ -62,7 +62,7 @@ export default function ContactPage() {
             </div>
             <div className="contact-details">
               <h4>Alamat</h4>
-              <p>Jl. Ubi Ungu No. 12, Braga, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40111</p>
+              <p>Jl. H Murtado, tikungan depan Niceso</p>
             </div>
           </div>
 
@@ -72,7 +72,7 @@ export default function ContactPage() {
             </div>
             <div className="contact-details">
               <h4>Telepon / WhatsApp</h4>
-              <p>+62 812-3456-789</p>
+              <p>088808759491</p>
             </div>
           </div>
 
@@ -83,9 +83,7 @@ export default function ContactPage() {
             <div className="contact-details">
               <h4>Email</h4>
               <p>
-                halo@purplebite.com
-                <br />
-                info@purplebite.com
+                KedaiUbiUUngu@gmail.com
               </p>
             </div>
           </div>
@@ -96,7 +94,7 @@ export default function ContactPage() {
             </div>
             <div className="contact-details">
               <h4>Jam Operasional</h4>
-              <p>Setiap Hari: 08:00 - 20:00 WIB</p>
+              <p>Setiap Hari: 09:00 - 22:00 WIB</p>
             </div>
           </div>
         </div>
