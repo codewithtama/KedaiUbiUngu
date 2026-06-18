@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import db from '@/lib/db';
+import { DEFAULT_PRODUCTS } from '@/lib/db';
 import ProductCard from '@/components/ProductCard';
 
 export const revalidate = 0; // Disable server caching to ensure live edits to products are seen instantly!
@@ -12,20 +12,11 @@ interface Product {
   price: number;
   image: string;
   category: string;
-  badge?: string;
+  badge?: string | null;
 }
 
 export default function Home() {
-  // Directly query the database on the server
-  let featuredProducts: Product[] = [];
-  try {
-    const stmt = db.prepare('SELECT * FROM products LIMIT 3');
-    // Spread into plain objects — DatabaseSync rows have a non-plain prototype
-    // which Next.js cannot serialize when passing to Client Components.
-    featuredProducts = (stmt.all() as Product[]).map((r) => ({ ...r }));
-  } catch (error) {
-    console.error('Error loading featured products:', error);
-  }
+  const featuredProducts: Product[] = DEFAULT_PRODUCTS.slice(0, 3).map((product) => ({ ...product }));
 
   return (
     <>

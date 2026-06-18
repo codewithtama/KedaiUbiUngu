@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
-import db from '@/lib/db';
+import { getDb } from '@/lib/db';
 
 export async function GET() {
   try {
+    const db = getDb();
     const stmt = db.prepare('SELECT * FROM products');
     const products = stmt.all();
     return NextResponse.json(products);
@@ -28,6 +29,7 @@ export async function POST(request: Request) {
       );
     }
 
+    const db = getDb();
     const id = 'p_' + Math.random().toString(36).substr(2, 9);
     const stmt = db.prepare(`
       INSERT INTO products (id, name, desc, price, image, category, badge)

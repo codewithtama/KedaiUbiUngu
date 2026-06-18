@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import db from '@/lib/db';
+import { getDb } from '@/lib/db';
 
 interface DBOrder {
   id: number;
@@ -17,6 +17,7 @@ interface DBOrder {
 
 export async function GET() {
   try {
+    const db = getDb();
     const stmt = db.prepare('SELECT * FROM orders ORDER BY id DESC');
     const orders = stmt.all() as DBOrder[];
     
@@ -60,6 +61,7 @@ export async function POST(request: Request) {
     const createdAt = new Date().toISOString();
     const itemsJson = JSON.stringify(items);
 
+    const db = getDb();
     const stmt = db.prepare(`
       INSERT INTO orders (customer_name, customer_phone, customer_address, items, subtotal, delivery_fee, total, payment_method, notes, created_at)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)

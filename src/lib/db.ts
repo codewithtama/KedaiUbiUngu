@@ -3,12 +3,82 @@ import path from 'path';
 
 const dbPath = path.join(process.cwd(), 'kedaiubiungu.db');
 
-// Instantiate connection
-const db = new DatabaseSync(dbPath);
+export interface ProductRecord {
+  id: string;
+  name: string;
+  desc: string;
+  price: number;
+  image: string;
+  category: string;
+  badge?: string | null;
+}
 
-// Initialize Tables
-export function initDB() {
-  // Create products table
+export const DEFAULT_PRODUCTS: ProductRecord[] = [
+  {
+    id: 'p1',
+    name: 'Purple Sweet Potato Roll Cake',
+    desc: 'Bolu gulung ubi ungu super lembut dengan isian krim vanila premium.',
+    price: 45000,
+    image: '/images/product_roll_cake.png',
+    category: 'cake',
+    badge: 'Terlaris'
+  },
+  {
+    id: 'p2',
+    name: 'Gourmet Purple Brownies',
+    desc: 'Brownies panggang dengan tekstur fudgy dan rasa ubi ungu manis alami yang khas.',
+    price: 38000,
+    image: '/images/product_brownies.png',
+    category: 'brownies',
+    badge: 'Premium'
+  },
+  {
+    id: 'p3',
+    name: 'Crispy Ubi Ungu Chips',
+    desc: 'Keripik ubi ungu renyah bebas pengawet, cemilan sehat kaya serat untuk menemani hari Anda.',
+    price: 18000,
+    image: '/images/product_chips.png',
+    category: 'snack',
+    badge: 'Sehat'
+  },
+  {
+    id: 'p4',
+    name: 'Purple Taro Premium Latte',
+    desc: 'Minuman latte creamy perpaduan taro alami dan ekstrak ubi ungu segar.',
+    price: 22000,
+    image: '/images/product_roll_cake.png',
+    category: 'beverage',
+    badge: 'Segar'
+  }
+];
+
+let db: DatabaseSync | null = null;
+
+function ensureDb() {
+  if (!db) {
+    db = new DatabaseSync(dbPath);
+    initDB();
+  }
+  return db;
+}
+
+export function getDb() {
+  return ensureDb();
+}
+
+export function getFeaturedProducts(limit = 3): ProductRecord[] {
+  try {
+    const rows = getDb().prepare(`SELECT * FROM products LIMIT ${limit}`).all() as ProductRecord[];
+    return rows.length ? rows.map((row) => ({ ...row })) : DEFAULT_PRODUCTS.slice(0, limit);
+  } catch (error) {
+    console.warn('Falling back to default products:', error);
+    return DEFAULT_PRODUCTS.slice(0, limit);
+  }
+}
+
+function initDB() {
+  if (!db) return;
+
   db.exec(`
     CREATE TABLE IF NOT EXISTS products (
       id TEXT PRIMARY KEY,
@@ -60,52 +130,12 @@ export function initDB() {
       VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
 
-    const defaultProducts = [
-      {
-        id: 'p1',
-        name: 'Purple Sweet Potato Roll Cake',
-        desc: 'Bolu gulung ubi ungu super lembut dengan isian krim vanila premium.',
-        price: 45000,
-        image: '/images/product_roll_cake.png',
-        category: 'cake',
-        badge: 'Terlaris'
-      },
-      {
-        id: 'p2',
-        name: 'Gourmet Purple Brownies',
-        desc: 'Brownies panggang dengan tekstur fudgy dan rasa ubi ungu manis alami yang khas.',
-        price: 38000,
-        image: '/images/product_brownies.png',
-        category: 'brownies',
-        badge: 'Premium'
-      },
-      {
-        id: 'p3',
-        name: 'Crispy Ubi Ungu Chips',
-        desc: 'Keripik ubi ungu renyah bebas pengawet, cemilan sehat kaya serat untuk menemani hari Anda.',
-        price: 18000,
-        image: '/images/product_chips.png',
-        category: 'snack',
-        badge: 'Sehat'
-      },
-      {
-        id: 'p4',
-        name: 'Purple Taro Premium Latte',
-        desc: 'Minuman latte creamy perpaduan taro alami dan ekstrak ubi ungu segar.',
-        price: 22000,
-        image: '/images/product_roll_cake.png', // Fallback to roll cake image as latte was cancelled
-        category: 'beverage',
-        badge: 'Segar'
-      }
-    ];
-
-    for (const prod of defaultProducts) {
-      insertStmt.run(prod.id, prod.name, prod.desc, prod.price, prod.image, prod.category, prod.badge);
+    for (const prod of DEFAULT_PRODUCTS) {
+      insertStmt.run(prod.id, prod.name, prod.desc, prod.price, prod.image, prod.category, prod.badge ?? null);
     }
   }
 }
 
-// Call initialization
-initDB();
-
-export default db;
+export default function dbInstance() {
+  return getDb();
+}

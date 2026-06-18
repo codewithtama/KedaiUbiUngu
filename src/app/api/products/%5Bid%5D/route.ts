@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import db from '@/lib/db';
+import { getDb } from '@/lib/db';
 
 export async function PUT(
   request: Request,
@@ -17,6 +17,7 @@ export async function PUT(
       );
     }
 
+    const db = getDb();
     const stmt = db.prepare(`
       UPDATE products
       SET name = ?, desc = ?, price = ?, image = ?, category = ?, badge = ?
@@ -50,6 +51,7 @@ export async function DELETE(
   try {
     const { id } = params;
 
+    const db = getDb();
     const stmt = db.prepare('DELETE FROM products WHERE id = ?');
     const info = stmt.run(id) as { changes: number };
 

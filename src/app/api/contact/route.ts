@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
-import db from '@/lib/db';
+import { getDb } from '@/lib/db';
 
 export async function GET() {
   try {
+    const db = getDb();
     const stmt = db.prepare('SELECT * FROM contact_submissions ORDER BY id DESC');
     const messages = stmt.all();
     return NextResponse.json(messages);
@@ -30,6 +31,7 @@ export async function POST(request: Request) {
 
     const createdAt = new Date().toISOString();
 
+    const db = getDb();
     const stmt = db.prepare(`
       INSERT INTO contact_submissions (name, email, subject, message, created_at)
       VALUES (?, ?, ?, ?, ?)
