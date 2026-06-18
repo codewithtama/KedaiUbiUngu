@@ -85,7 +85,7 @@ export default function DeliveryPage() {
 
       // 4. Redirect to WhatsApp
       window.open(whatsappUrl, '_blank');
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
       alert('Terjadi kesalahan saat memproses pesanan Anda. Silakan coba kembali.');
     } finally {
