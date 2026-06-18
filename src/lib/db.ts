@@ -1,7 +1,7 @@
 import { DatabaseSync } from 'node:sqlite';
 import path from 'path';
 
-const dbPath = path.join(process.cwd(), 'purplebite.db');
+const dbPath = path.join(process.cwd(), 'kedaiubiungu.db');
 
 // Instantiate connection
 const db = new DatabaseSync(dbPath);

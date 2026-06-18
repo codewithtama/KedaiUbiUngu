@@ -42,7 +42,7 @@ export default function AboutPage() {
 
         {/* Image Column */}
         <div className="about-image animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <img src="/images/hero.png" alt="Produk Makanan Ubi Ungu Premium PurpleBite" />
+          <img src="/images/hero.png" alt="Produk Makanan Ubi Ungu Premium Kedai Ubi Ungu" />
         </div>
       </div>
     </main>

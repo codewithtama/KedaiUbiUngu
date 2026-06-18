@@ -4,7 +4,7 @@ export default function WhatsAppFloat() {
   const WHATSAPP_NUMBER = '628123456789'; // Same dummy WhatsApp business number
 
   const handleClick = () => {
-    const defaultMessage = encodeURIComponent('Halo PurpleBite! Saya tertarik dengan produk ubi ungu Anda.');
+    const defaultMessage = encodeURIComponent('Halo Kedai Ubi Ungu! Saya tertarik dengan produk ubi ungu Anda.');
     window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${defaultMessage}`, '_blank');
   };
 

@@ -63,7 +63,7 @@ export default function DeliveryPage() {
         itemsMessage += `${idx + 1}. ${item.name} (x${item.qty}) - Rp ${cost.toLocaleString('id-ID')}\n`;
       });
 
-      const waMessage = `*Pemesanan Baru - PurpleBite*\n\n` +
+      const waMessage = `*Pemesanan Baru - Kedai Ubi Ungu*\n\n` +
                         `*Data Pelanggan:*\n` +
                         `Nama: ${name}\n` +
                         `Telepon: ${phone}\n` +

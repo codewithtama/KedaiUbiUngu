@@ -59,7 +59,7 @@ export const useCartStore = create<CartState>()(
       clearCart: () => set({ cart: [] }),
     }),
     {
-      name: 'purplebite_cart_storage', // Name of the local storage key
+      name: 'kedaiubiungu_cart_storage', // Name of the local storage key
     }
   )
 );

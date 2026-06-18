@@ -47,7 +47,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="hero-image-wrapper">
-            <Image src="/images/hero.png" alt="Sajian hidangan ubi ungu premium dari PurpleBite" width={600} height={500} priority />
+            <Image src="/images/hero.png" alt="Sajian hidangan ubi ungu premium dari Kedai Ubi Ungu" width={600} height={500} priority />
           </div>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function Home() {
           <div className="section-header">
             <h2 className="section-title">Produk Unggulan Kami</h2>
             <p className="section-subtitle">
-              Pilihan kreasi terbaik dari dapur PurpleBite yang menjadi favorit semua orang.
+              Pilihan kreasi terbaik dari dapur Kedai Ubi Ungu yang menjadi favorit semua orang.
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export default function Home() {
           <div className="section-header">
             <h2 className="section-title">Mengapa Memilih Kami?</h2>
             <p className="section-subtitle">
-              Setiap gigitan PurpleBite dibuat dengan cinta dan dedikasi untuk kepuasan Anda.
+              Setiap gigitan Kedai Ubi Ungu dibuat dengan cinta dan dedikasi untuk kepuasan Anda.
             </p>
           </div>
           <div className="benefits-grid">
