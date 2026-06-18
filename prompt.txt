@@ -1,0 +1,108 @@
+Create a modern WordPress website called "PurpleBite", a food brand specializing in purple sweet potato products.
+
+Design Goal:
+Create a simple, elegant, and modern food business website suitable for a university project and small food business.
+
+Style:
+
+* Modern
+* Clean UI
+* Minimalist
+* Soft pastel purple theme
+* Premium but simple
+* Friendly and inviting
+* Responsive design
+* Mobile-first
+
+Color Palette:
+
+* Soft Purple (#B794F4)
+* Lavender (#D6BCFA)
+* White (#FFFFFF)
+* Cream (#FFF8F0)
+* Light Gray (#F7F7F7)
+
+Typography:
+
+* Poppins for headings
+* Inter for body text
+
+Pages:
+
+1. Home
+2. Products
+3. Delivery
+4. About Us
+5. Contact
+
+Home Page:
+
+* Sticky navigation bar
+* Large hero section
+* High-quality purple sweet potato food photography
+* Headline:
+  "Lezat dan Sehat dari Ubi Ungu"
+* CTA button:
+  "Pesan Sekarang"
+* Featured products section
+* Product benefits section with icons
+* Customer testimonials
+* Simple modern footer
+
+Products Page:
+
+* Clean product grid
+* Product cards with image, product name, price, and order button
+* Search bar
+* Simple category filter
+
+Delivery Page:
+
+* Delivery information
+* Estimated delivery time (30–60 minutes)
+* Payment methods:
+
+  * COD
+  * Bank Transfer
+  * E-Wallet
+* Checkout button
+
+About Us Page:
+
+* Company story
+* Vision and mission
+* Two-column layout with image and text
+
+Contact Page:
+
+* Contact form
+* Address
+* Email
+* Phone number
+* Floating WhatsApp button
+
+Design Requirements:
+
+* Rounded corners
+* Soft shadows
+* Smooth hover effects
+* Large whitespace
+* Clean card layout
+* Soft gradients
+* Focus on product images
+* Modern food startup aesthetic
+* Professional but not overly corporate
+* Suitable for a student project
+* WordPress + Elementor + WooCommerce style
+
+Avoid:
+
+* Dark purple themes
+* Complex dashboards
+* Excessive animations
+* Overcrowded layouts
+* Corporate enterprise design
+* Too many sections on one page
+
+Reference Style:
+Modern food startup websites, premium bakery websites, and minimalist café websites with soft pastel colors.
